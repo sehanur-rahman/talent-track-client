@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 const MainLayout = () => {
     const { pathname } = useLocation();
 
-    // 🔹 SCROLL TO TOP ON ROUTE CHANGE
+    // SCROLL TO TOP ON ROUTE CHANGE
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);

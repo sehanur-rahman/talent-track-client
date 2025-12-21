@@ -8,7 +8,6 @@ const Footer = () => {
         <footer className="footer footer-horizontal footer-center bg-black text-white p-10">
 
             <div>
-                {/* LOGO + TEXT */}
                     <Link to="/" className="flex items-center gap-3">
                         <img src={logo} alt="logo" className="h-14 w-14 object-contain" />
 

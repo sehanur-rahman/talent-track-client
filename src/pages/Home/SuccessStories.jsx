@@ -48,14 +48,14 @@ const successStories = [
 const SuccessStories = () => {
     return (
         <section className=" py-10 mt-4">
-            {/* 🔒 Width controller (MainLayout friendly) */}
+            {/* Width controller (MainLayout friendly) */}
             <div className="max-w-6xl mx-auto px-4">
 
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
                     Success Stories
                 </h2>
 
-                {/* 🔥 Swiper wrapper (NO peeking) */}
+                {/* Swiper wrapper */}
                 <div className="success-swiper-wrapper">
                     <Swiper
                         modules={[Pagination, Navigation, Autoplay]}
@@ -115,7 +115,7 @@ const SuccessStories = () => {
                     </Swiper>
                 </div>
 
-                {/* 🔥 Controls row */}
+                {/* Controls row */}
                 <div className="flex justify-center mt-10">
                     <div className="flex items-center gap-6">
                         {/* Previous */}

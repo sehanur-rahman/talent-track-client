@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { Link, NavLink} from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useUserRole from "../hooks/useUserRole";
@@ -12,16 +11,14 @@ const Navbar = () => {
         try {
             await logoutUser();
 
-            // 🔥 FULL RESET
             localStorage.removeItem("access-token");
-            window.location.href = "/"; // hard reload
+            window.location.href = "/";
         } catch (err) {
             console.error(err);
         }
     };
 
 
-    // ✅ Active link styling (PRIMARY COLOR)
     const navLinkClass = ({ isActive }) =>
         isActive ? "text-primary font-semibold" : "font-medium";
 
@@ -51,10 +48,9 @@ const Navbar = () => {
         <div className="bg-white shadow-md sticky top-0 z-50">
             <div className="navbar max-w-6xl mx-auto px-4">
 
-                {/* ================= LEFT ================= */}
+
                 <div className="navbar-start">
 
-                    {/* 📱 MOBILE MENU */}
                     <div className="dropdown lg:hidden">
                         <label tabIndex={0} className="btn btn-ghost">
                             <svg
@@ -81,7 +77,7 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    {/* 🔰 LOGO (UNCHANGED) */}
+
                     <Link to="/" className="flex items-center gap-3">
                         <img
                             src={logo}
@@ -99,18 +95,15 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                {/* ================= CENTER (Desktop) ================= */}
+
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal gap-4">
                         {navLinks}
                     </ul>
                 </div>
 
-                {/* ================= RIGHT ================= */}
                 <div className="navbar-end gap-3">
 
-
-                    {/* ❌ NOT LOGGED IN */}
                     {!loading && !user && (
                         <>
                             <Link to="/login" className="btn btn-outline btn-md">
@@ -125,7 +118,7 @@ const Navbar = () => {
                         </>
                     )}
 
-                    {/* ✅ LOGGED IN */}
+
                     {!loading && user && (
                         <div className="dropdown dropdown-end">
                             <label
@@ -143,7 +136,7 @@ const Navbar = () => {
                                 </div>
                             </label>
 
-                            {/* 👤 DROPDOWN */}
+
                             <ul
                                 tabIndex={0}
                                 className="menu menu-sm dropdown-content mt-3 shadow bg-base-100 rounded-box w-52"

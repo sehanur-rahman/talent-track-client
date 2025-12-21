@@ -1,4 +1,3 @@
-// src/pages/Scholarships/AllScholarships.jsx
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import useAxiosSecure from "../../hooks/useAxiosSecure";

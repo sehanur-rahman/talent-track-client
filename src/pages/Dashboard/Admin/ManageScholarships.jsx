@@ -9,14 +9,14 @@ const ManageScholarships = () => {
     const [editing, setEditing] = useState(null);
     const [deleteTarget, setDeleteTarget] = useState(null);
 
-    // 🔹 Load all scholarships (Admin)
+    // Load all scholarships (Admin)
     useEffect(() => {
         axiosSecure.get("/scholarships/admin/all").then(res => {
             setScholarships(res.data);
         });
     }, [axiosSecure]);
 
-    // 🔹 Delete
+    // Delete
     const confirmDelete = async () => {
         try {
             await axiosSecure.delete(`/scholarships/${deleteTarget._id}`);
@@ -31,7 +31,7 @@ const ManageScholarships = () => {
         }
     };
 
-    // 🔹 Update
+    // Update
     const handleUpdate = async (e) => {
         e.preventDefault();
         const form = e.target;
@@ -98,10 +98,10 @@ const ManageScholarships = () => {
                     <tbody>
                         {scholarships.map(s => (
                             <tr key={s._id}>
-                                {/* ✅ Always visible */}
+                                {/* Always visible */}
                                 <td>{s.universityName}</td>
 
-                                {/* ❌ Hidden on mobile */}
+                                {/* Hidden on mobile */}
                                 <td className="hidden md:table-cell">
                                     {s.scholarshipName}
                                 </td>
@@ -112,7 +112,7 @@ const ManageScholarships = () => {
                                     ${s.applicationFees}
                                 </td>
 
-                                {/* ✅ Actions always visible */}
+                                {/* Actions always visible */}
                                 <td className="flex gap-2 justify-center">
                                     <button
                                         onClick={() => setEditing(s)}

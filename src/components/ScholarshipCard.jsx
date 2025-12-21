@@ -8,7 +8,6 @@ const ScholarshipCard = ({ item }) => {
     return (
         <div className="card bg-base-100 shadow-md border rounded-xl overflow-hidden flex flex-col h-full">
 
-            {/* ================= IMAGE ================= */}
             <figure className="h-48">
                 <img
                     src={item.universityImage}
@@ -17,26 +16,21 @@ const ScholarshipCard = ({ item }) => {
                 />
             </figure>
 
-            {/* ================= BODY ================= */}
             <div className="card-body flex flex-col grow space-y-2">
 
-                {/* UNIVERSITY NAME */}
                 <h3 className="text-lg font-bold line-clamp-1">
                     {item.universityName}
                 </h3>
 
-                {/* SCHOLARSHIP CATEGORY */}
                 <span className="badge badge-primary w-fit">
                     {item.scholarshipCategory}
                 </span>
 
-                {/* LOCATION */}
                 <p className="text-sm text-gray-600 flex items-center gap-1">
                     <FaMapMarkerAlt className="text-primary" />
                     {item.universityCity}, {item.universityCountry}
                 </p>
 
-                {/* APPLICATION FEES */}
                 {item.applicationFees > 0 ? (
                     <p className="font-semibold text-gray-800">
                         Application Fees:{" "}
@@ -50,7 +44,6 @@ const ScholarshipCard = ({ item }) => {
                     </p>
                 )}
 
-                {/* BUTTON AT BOTTOM */}
                 <div className="mt-auto">
                     <Link
                         to={`/scholarships/${item._id}`}

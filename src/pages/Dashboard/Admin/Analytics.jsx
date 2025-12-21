@@ -98,7 +98,7 @@ const Analytics = () => {
                         No application data available
                     </p>
                 ) : isMobile ? (
-                    // 📱 PIE CHART (Mobile)
+                    // PIE CHART (Mobile)
                     <div className="flex justify-center">
                         <PieChart width={300} height={300}>
                             <Pie
@@ -119,7 +119,7 @@ const Analytics = () => {
                         </PieChart>
                     </div>
                 ) : (
-                    // 🖥️ BAR CHART (Desktop)
+                    // BAR CHART (Desktop)
                     <ResponsiveContainer width="100%" height={350}>
                         <BarChart data={chartData}>
                             <XAxis

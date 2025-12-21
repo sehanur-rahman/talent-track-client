@@ -1,5 +1,3 @@
-// src/pages/Scholarships/ScholarshipDetails.jsx
-
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaGlobeAsia, FaStar, FaMapMarkerAlt } from "react-icons/fa";
@@ -21,7 +19,7 @@ const ScholarshipDetails = () => {
     useEffect(() => {
         const loadData = async () => {
             try {
-                // 1️⃣ Load scholarship + reviews
+                // Load scholarship + reviews
                 const [scholarRes, reviewRes] = await Promise.all([
                     axiosSecure.get(`/scholarships/${id}`),
                     axiosSecure.get(`/reviews/${id}`),
@@ -30,7 +28,7 @@ const ScholarshipDetails = () => {
                 setScholarship(scholarRes.data);
                 setReviews(reviewRes.data || []);
 
-                // 2️⃣ Check already applied (only if logged in)
+                // Check already applied (only if logged in)
                 if (user) {
                     const res = await axiosSecure.get(
                         `/applications/check/${id}`

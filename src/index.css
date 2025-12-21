@@ -15,7 +15,6 @@
 
 body {
     background-color: #FEF9E7;
-    /* Light cream example */
     margin: 0;
     padding: 0;
     font-family: "Urbanist", sans-serif;
@@ -25,16 +24,11 @@ body {
 
 
 
-
-/* ================================
-   Success Stories (FINAL FIX)
-================================ */
-
-/* 🔒 Hide left/right overflow, allow top */
+/*  Hide left/right overflow, allow top */
 .success-swiper-wrapper {
   overflow-x: hidden;
   overflow-y: visible;
-  padding-top: 80px; /* space for lifted card */
+  padding-top: 80px; 
 }
 
 /* Swiper internal */

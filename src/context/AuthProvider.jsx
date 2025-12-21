@@ -1,4 +1,3 @@
-// src/context/AuthProvider.jsx
 import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 
@@ -12,7 +11,7 @@ import {
     signOut,
 } from "firebase/auth";
 
-import { auth } from "../firebase/firebase.config"; // ⭐ USE SINGLE AUTH INSTANCE
+import { auth } from "../firebase/firebase.config"; 
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -58,7 +57,6 @@ const AuthProvider = ({ children }) => {
             const token = localStorage.getItem("access-token");
 
             if (currentUser && !token) {
-                // JWT এখনো আসে নাই → loading রাখো
                 return;
             }
 

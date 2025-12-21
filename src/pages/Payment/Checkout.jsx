@@ -1,5 +1,3 @@
-// src/pages/Payment/Checkout.jsx
-
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -43,14 +41,14 @@ const Checkout = () => {
     const [processing, setProcessing] = useState(false);
     const [error, setError] = useState("");
 
-    // 🔒 Protect direct access
+    // Protect direct access
     useEffect(() => {
         if (!scholarshipId) {
             navigate("/scholarships");
         }
     }, [scholarshipId, navigate]);
 
-    // 🔑 Create payment intent
+    // Create payment intent
     useEffect(() => {
         if (!scholarshipId) return;
 
@@ -62,7 +60,7 @@ const Checkout = () => {
             );
     }, [axiosSecure, scholarshipId]);
 
-    // 💳 Handle payment
+    // Handle payment
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -83,9 +81,9 @@ const Checkout = () => {
                     },
                 });
 
-            // ❌ PAYMENT FAILED
+            // PAYMENT FAILED
             if (error) {
-                // 👉 First time fail → create unpaid application
+                // First time fail -> create unpaid application
                 if (!isRetry) {
                     await axiosSecure.post("/applications", {
                         scholarshipId,
@@ -109,7 +107,7 @@ const Checkout = () => {
                 return;
             }
 
-            // ✅ PAYMENT SUCCESS
+            // PAYMENT SUCCESS
             if (paymentIntent.status === "succeeded") {
                 if (isRetry) {
                     await axiosSecure.patch(

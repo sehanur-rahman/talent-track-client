@@ -1,4 +1,3 @@
-// src/pages/Home/Banner.jsx
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -103,7 +102,7 @@ const Banner = () => {
                                     {slide.desc}
                                 </p>
 
-                                {/* ✅ SEARCH SCHOLARSHIP BUTTON */}
+                                {/* SEARCH SCHOLARSHIP BUTTON */}
                                 <Link
                                     to="/scholarships"
                                     className="btn btn-primary btn-sm sm:btn-md md:btn-lg mt-1 md:mt-2"

@@ -78,7 +78,7 @@ const MyApplications = () => {
                 Edit
             </button>
 
-            {/* ✅ PAY BUTTON FIX */}
+            {/* PAY BUTTON FIX */}
             {app.applicationStatus === "pending" &&
                 app.paymentStatus === "unpaid" && (
                     <button

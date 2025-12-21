@@ -1,4 +1,3 @@
-// src/layout/DashboardLayout.jsx
 import { Outlet, NavLink, Navigate, Link, useLocation } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
@@ -50,16 +49,15 @@ const DashboardLayout = () => {
         try {
             await logoutUser();
 
-            // 🔥 FULL RESET
             localStorage.removeItem("access-token");
-            window.location.href = "/"; // hard reload
+            window.location.href = "/"; 
         } catch (err) {
             console.error(err);
         }
     };
 
 
-    // ✅ Role icon map
+    // Role icon map
     const roleIcon = {
         Admin: <FaUserShield className="text-5xl text-primary" />,
         Moderator: <FaUserTie className="text-5xl text-primary" />,
@@ -72,7 +70,7 @@ const DashboardLayout = () => {
             {/* ================= Mobile Header ================= */}
             <div className="md:hidden fixed top-0 left-0 right-0 z-40 bg-white shadow px-4 py-3 flex items-center justify-between">
 
-                {/* ☰ Menu Button + Title */}
+                {/*  Menu Button + Title */}
                 <div className="flex items-center gap-3">
                     <button
                         className="btn btn-sm btn-circle"
@@ -83,7 +81,7 @@ const DashboardLayout = () => {
                     <span className="font-semibold text-lg">Dashboard</span>
                 </div>
 
-                {/* 👤 Profile (Mobile) */}
+                {/* Profile (Mobile) */}
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="avatar cursor-pointer">
                         <div className="w-9 rounded-full ring ring-primary ring-offset-2">

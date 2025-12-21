@@ -1,4 +1,3 @@
-// src/pages/Auth/Register.jsx
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -21,25 +20,25 @@ const Register = () => {
         setFirebaseError("");
 
         try {
-            // 1️⃣ Firebase register
+            // Firebase register
             await registerUser(email, password);
 
-            // 2️⃣ Update profile
+            // Update profile
             await updateUserProfile(name, photo);
 
-            // 3️⃣ Save user in MongoDB
+            // Save user in MongoDB
             await axiosSecure.post("/users", {
                 name,
                 email,
                 photoURL: photo,
             });
 
-            // 🔥🔥🔥 4️⃣ GET JWT TOKEN (THIS WAS MISSING)
+            // GET JWT TOKEN 
             const jwtRes = await axiosSecure.post("/jwt", { email });
 
             localStorage.setItem("access-token", jwtRes.data.token);
 
-            // 5️⃣ Redirect
+            // Redirect
             navigate("/");
         } catch (err) {
             setFirebaseError(err.message);

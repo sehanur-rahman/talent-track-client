@@ -1,4 +1,3 @@
-// src/routes/ModeratorRoute.jsx
 import { Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useUserRole from "../hooks/useUserRole";

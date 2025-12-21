@@ -1,4 +1,3 @@
-// src/pages/Auth/Login.jsx
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -52,14 +51,14 @@ const Login = () => {
             const result = await googleLogin();
             const user = result.user;
 
-            // 🔹 Save user (ignore if already exists)
+            // Save user (ignore if already exists)
             await axiosSecure.post("/users", {
                 name: user.displayName,
                 email: user.email,
                 photoURL: user.photoURL,
             });
 
-            // 🔹 Get JWT
+            // Get JWT
             const jwtRes = await axiosSecure.post("/jwt", {
                 email: user.email,
             });

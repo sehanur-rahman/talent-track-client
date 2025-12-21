@@ -54,7 +54,7 @@ const MyProfile = () => {
                 {/* Divider */}
                 <div className="my-8 border-t"></div>
 
-                {/* Extra Info Section (Future Ready) */}
+                {/* Extra Info Section */}
                 <div className="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
 
                     <div className="bg-base-200 rounded-xl p-4">
