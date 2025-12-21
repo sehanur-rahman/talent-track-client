@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: light --default;
+}
+
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+    --color-primary: #ff9616;
+}
+
+
+body {
+    background-color: #FEF9E7;
+    /* Light cream example */
+    margin: 0;
+    padding: 0;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+
+
+/* ================================
+   Success Stories (FINAL FIX)
+================================ */
+
+/* 🔒 Hide left/right overflow, allow top */
+.success-swiper-wrapper {
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding-top: 80px; /* space for lifted card */
+}
+
+/* Swiper internal */
+.successSwiper {
+  overflow: visible !important;
+}
+
+.successSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: all 0.4s ease;
+}
+
+/* Card */
+.success-card {
+  width: 340px;
+  height: 260px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+}
+
+/* Active card lifted */
+.successSwiper .swiper-slide-active {
+  align-items: flex-start;
+}
+
+.successSwiper .swiper-slide-active .success-card {
+  transform: translateY(-60px);
+}
+
+/* Side cards faded (ONLY 2 visible) */
+.successSwiper .swiper-slide-prev .success-card,
+.successSwiper .swiper-slide-next .success-card {
+  opacity: 0.4;
+}
+
+/* Pagination bullets */
+.success-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #d1d1d1;
+  opacity: 1;
+}
+
+.success-pagination .swiper-pagination-bullet-active {
+  background: #ff9616;
+}
+
