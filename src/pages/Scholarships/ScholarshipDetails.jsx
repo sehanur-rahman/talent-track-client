@@ -78,17 +78,17 @@ const ScholarshipDetails = () => {
                         {scholarship.scholarshipName}
                     </h1>
 
-                    <p className="text-lg text-gray-700">
+                    <p className="text-lg text-base-content/80">
                         {scholarship.universityName}
                     </p>
 
-                    <p className="flex items-center gap-2 text-gray-600">
+                    <p className="flex items-center gap-2 text-base-content/70">
                         <FaMapMarkerAlt className="text-primary" />
                         {scholarship.universityCity},{" "}
                         {scholarship.universityCountry}
                     </p>
 
-                    <p className="flex items-center gap-2 text-gray-600">
+                    <p className="flex items-center gap-2 text-base-content/70">
                         <FaGlobeAsia className="text-primary" />
                         World Rank:
                         <span className="font-semibold ml-1">
@@ -141,7 +141,7 @@ const ScholarshipDetails = () => {
                     </button>
 
                     {applied && (
-                        <p className="text-sm text-gray-500 text-center">
+                        <p className="text-sm text-base-content/70 text-center">
                             You have already applied for this scholarship.
                         </p>
                     )}
@@ -153,7 +153,7 @@ const ScholarshipDetails = () => {
                 <h2 className="text-2xl font-bold">Student Reviews</h2>
 
                 {reviews.length === 0 && (
-                    <p className="text-gray-500">
+                    <p className="text-base-content/70">
                         No reviews yet. Reviews will appear after students
                         complete their applications.
                     </p>
@@ -163,7 +163,7 @@ const ScholarshipDetails = () => {
                     {reviews.map((review) => (
                         <div
                             key={review._id}
-                            className="p-5 bg-white rounded-xl shadow border"
+                            className="p-5 bg-base-100 rounded-xl shadow border"
                         >
                             <div className="flex items-center gap-4">
                                 <img
@@ -175,7 +175,7 @@ const ScholarshipDetails = () => {
                                     <p className="font-semibold">
                                         {review.userName}
                                     </p>
-                                    <p className="text-sm text-gray-500">
+                                    <p className="text-sm text-base-content/70">
                                         {new Date(
                                             review.reviewDate
                                         ).toLocaleDateString()}
@@ -188,7 +188,7 @@ const ScholarshipDetails = () => {
                                 {review.ratingPoint} / 5
                             </p>
 
-                            <p className="mt-2 text-gray-700">
+                            <p className="mt-2 text-base-content/80">
                                 {review.reviewComment}
                             </p>
                         </div>

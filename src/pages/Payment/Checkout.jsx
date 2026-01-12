@@ -8,8 +8,8 @@ const cardStyle = {
     style: {
         base: {
             fontSize: "16px",
-            color: "#32325d",
-            "::placeholder": { color: "#a0aec0" },
+            color: "#9e9ecb",
+            "::placeholder": { color: "#bccbdd" },
         },
         invalid: { color: "#e53e3e" },
     },
@@ -140,8 +140,8 @@ const Checkout = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[#FEF9E7] px-4">
-            <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+        <div className="min-h-screen flex items-center justify-center px-4 ">
+            <div className="w-full max-w-md bg-base-200 rounded-2xl shadow-2xl p-8 border border-base-300 dark:border-white/60">
                 <h2 className="text-3xl font-bold text-center mb-6">
                     {isRetry ? "Retry Payment" : "Checkout"}
                 </h2>

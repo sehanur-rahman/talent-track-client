@@ -76,7 +76,7 @@ const ManageUsers = () => {
             </div>
 
             {/* ===== Table ===== */}
-            <div className="overflow-x-auto bg-white rounded-xl shadow">
+            <div className="overflow-x-auto bg-base-200 rounded-xl shadow">
                 <table className="table">
                     <thead>
                         <tr>

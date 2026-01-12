@@ -41,7 +41,7 @@ const Banner = () => {
     };
 
     return (
-        <div className="mt-6 rounded-3xl shadow-lg overflow-hidden">
+        <div className="rounded-3xl shadow-lg overflow-hidden">
             <Carousel
                 autoPlay
                 infiniteLoop

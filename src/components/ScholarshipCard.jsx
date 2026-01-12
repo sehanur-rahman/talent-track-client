@@ -6,7 +6,7 @@ const ScholarshipCard = ({ item }) => {
     if (!item) return null;
 
     return (
-        <div className="card bg-base-100 shadow-md border rounded-xl overflow-hidden flex flex-col h-full">
+        <div className="card bg-base-100 shadow-md border rounded-xl overflow-hidden flex flex-col h-90">
 
             <figure className="h-48">
                 <img
@@ -16,7 +16,7 @@ const ScholarshipCard = ({ item }) => {
                 />
             </figure>
 
-            <div className="card-body flex flex-col grow space-y-2">
+            <div className="card-body flex flex-col grow">
 
                 <h3 className="text-lg font-bold line-clamp-1">
                     {item.universityName}
@@ -26,13 +26,13 @@ const ScholarshipCard = ({ item }) => {
                     {item.scholarshipCategory}
                 </span>
 
-                <p className="text-sm text-gray-600 flex items-center gap-1">
+                <p className="text-sm text-base-content/70 flex items-center gap-1">
                     <FaMapMarkerAlt className="text-primary" />
                     {item.universityCity}, {item.universityCountry}
                 </p>
 
                 {item.applicationFees > 0 ? (
-                    <p className="font-semibold text-gray-800">
+                    <p className="font-semibold text-base-content">
                         Application Fees:{" "}
                         <span className="text-primary">
                             ${item.applicationFees}

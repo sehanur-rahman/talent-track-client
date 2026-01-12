@@ -53,7 +53,7 @@ const ManageReviews = () => {
             <h2 className="text-3xl font-bold mb-6">Manage Reviews</h2>
 
             {/* ================= DESKTOP TABLE ================= */}
-            <div className="hidden md:block bg-white rounded-xl shadow overflow-x-auto">
+            <div className="hidden md:block bg-base-100 rounded-xl shadow overflow-x-auto border border-base-300 dark:border-white/60">
                 <table className="table">
                     <thead>
                         <tr>
@@ -107,7 +107,7 @@ const ManageReviews = () => {
                 {reviews.map(review => (
                     <div
                         key={review._id}
-                        className="bg-white p-4 rounded-xl shadow space-y-2"
+                        className="bg-base-100 p-4 rounded-xl shadow space-y-2 border border-base-300 dark:border-white/60"
                     >
                         <div className="flex justify-between items-center">
                             <h3 className="font-bold">
@@ -121,7 +121,7 @@ const ManageReviews = () => {
                             </button>
                         </div>
 
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-base-content/70">
                             By {review.userName}
                         </p>
 
@@ -142,7 +142,7 @@ const ManageReviews = () => {
                             {review.reviewComment}
                         </p>
 
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-base-content/70">
                             {new Date(review.reviewDate).toLocaleDateString()}
                         </p>
                     </div>

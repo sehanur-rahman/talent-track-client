@@ -84,16 +84,18 @@ const SuccessStories = () => {
                     >
                         {successStories.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className="success-card">
+                                <div className="success-card bg-base-100 text-base-content">
+
                                     {/* Icon */}
                                     <SiSemanticscholar className="text-4xl text-primary" />
 
                                     {/* Story */}
-                                    <p className="text-gray-600 italic leading-relaxed">
+                                    <p className="text-base-content/70 italic leading-relaxed">
                                         {item.text}
                                     </p>
 
-                                    <hr />
+                                    <hr className="border-base-600" />
+
 
                                     {/* User info */}
                                     <div className="flex items-center gap-4">
@@ -103,8 +105,8 @@ const SuccessStories = () => {
                                             className="w-12 h-12 rounded-full object-cover"
                                         />
                                         <div>
-                                            <h4 className="font-semibold">{item.name}</h4>
-                                            <p className="text-sm text-gray-500">
+                                            <h4 className="font-semibold text-base-content">{item.name}</h4>
+                                            <p className="text-sm text-base-content/60">
                                                 Studying in {item.country}
                                             </p>
                                         </div>

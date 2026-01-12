@@ -73,10 +73,37 @@ const Login = () => {
         }
     };
 
+    // ===== Demo Student Login =====
+    const handleDemoLogin = async () => {
+        setFirebaseError("");
+        setLoadingLogin(true);
+
+        try {
+            const email = "anis@gmail.com";
+            const password = "123456aS@";
+
+            const result = await loginUser(email, password);
+
+            const jwtRes = await axiosSecure.post("/jwt", {
+                email: result.user.email,
+            });
+
+            localStorage.setItem("access-token", jwtRes.data.token);
+
+            navigate("/");
+        } catch (err) {
+            console.error(err);
+            setFirebaseError("Demo login failed. Please try again.");
+        } finally {
+            setLoadingLogin(false);
+        }
+    };
+
+
 
     return (
         <div className="flex justify-center items-center py-10">
-            <div className="card w-full max-w-md bg-base-100 shadow-xl p-8">
+            <div className="card w-full max-w-md bg-base-100 shadow-2xl p-8 border border-base-300 dark:border-white/60">
                 <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -147,6 +174,15 @@ const Login = () => {
                         </>
                     )}
                 </button>
+
+                <button
+                    onClick={handleDemoLogin}
+                    disabled={loadingLogin}
+                    className="btn btn-secondary w-full mt-3"
+                >
+                    Demo Student Login
+                </button>
+
 
 
                 <p className="text-center mt-4">

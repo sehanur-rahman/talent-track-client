@@ -93,7 +93,7 @@ const ManageApplications = () => {
             <h2 className="text-3xl font-bold mb-6">Manage Applications</h2>
 
             {/* ================= DESKTOP TABLE ================= */}
-            <div className="hidden md:block bg-white rounded-xl shadow overflow-x-auto">
+            <div className="hidden md:block bg-base-100 rounded-xl shadow overflow-x-auto border border-base-300 dark:border-white/60">
                 <table className="table">
                     <thead>
                         <tr>
@@ -117,11 +117,11 @@ const ManageApplications = () => {
                                 {/* FEEDBACK COLUMN */}
                                 <td className="max-w-xs">
                                     {app.feedback ? (
-                                        <span className="text-sm text-gray-700">
+                                        <span className="text-sm text-base-content/80">
                                             {app.feedback}
                                         </span>
                                     ) : (
-                                        <span className="text-xs text-gray-400 italic">
+                                        <span className="text-xs text-base-content/70 italic">
                                             No feedback yet
                                         </span>
                                     )}
@@ -209,7 +209,7 @@ const ManageApplications = () => {
                 {applications.map(app => (
                     <div
                         key={app._id}
-                        className="bg-white p-6 rounded-xl shadow w-full max-w-sm space-y-3"
+                        className="bg-base-100 p-6 rounded-xl shadow w-full max-w-sm space-y-3 border border-base-300 dark:border-white/60"
                     >
                         <p className="font-bold">{app.userName || "N/A"}</p>
                         <p className="text-sm">{app.userEmail}</p>
@@ -218,7 +218,7 @@ const ManageApplications = () => {
                         <p className="text-sm">
                             <b>Feedback:</b>{" "}
                             {app.feedback || (
-                                <span className="italic text-gray-400">
+                                <span className="italic text-base-content/70">
                                     No feedback yet
                                 </span>
                             )}

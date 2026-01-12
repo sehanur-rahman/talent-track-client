@@ -72,7 +72,7 @@ const Analytics = () => {
             </div>
 
             {/* ================= Chart Section ================= */}
-            <div className="bg-white rounded-2xl shadow p-6">
+            <div className="bg-base-200 rounded-2xl shadow p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                     <h3 className="text-xl font-bold">
                         Applications Overview
@@ -94,7 +94,7 @@ const Analytics = () => {
 
                 {/* ===== Responsive Chart ===== */}
                 {chartData.length === 0 ? (
-                    <p className="text-center text-gray-500 py-10">
+                    <p className="text-center text-base-content/70 py-10">
                         No application data available
                     </p>
                 ) : isMobile ? (
@@ -146,8 +146,8 @@ export default Analytics;
 /* ================= Helper ================= */
 
 const StatCard = ({ title, value }) => (
-    <div className="bg-white rounded-2xl shadow p-6 text-center">
-        <p className="text-gray-500 text-sm mb-2">{title}</p>
+    <div className="bg-base-200 rounded-2xl shadow p-6 text-center">
+        <p className="text-base-content/70 text-sm mb-2">{title}</p>
         <h3 className="text-3xl font-extrabold text-primary">
             {value ?? 0}
         </h3>

@@ -3,6 +3,9 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import useUserRole from "../hooks/useUserRole";
 import { motion } from "framer-motion";
+import ThemeToggle from "../components/ThemeToggle";
+
+
 
 // Icons
 import {
@@ -43,7 +46,7 @@ const DashboardLayout = () => {
 
     const linkClass = ({ isActive }) =>
         `flex items-center gap-3 px-3 py-2 rounded-lg font-medium
-        ${isActive ? "bg-primary text-white" : "hover:bg-gray-100"}`;
+        ${isActive ? "bg-primary text-white" : "hover:bg-base-content/10"}`;
 
     const handleLogout = async () => {
         try {
@@ -65,10 +68,10 @@ const DashboardLayout = () => {
     };
 
     return (
-        <div className="min-h-screen flex bg-[#FEF9E7]">
-
+        <div className="min-h-screen flex bg-base-100">
+        
             {/* ================= Mobile Header ================= */}
-            <div className="md:hidden fixed top-0 left-0 right-0 z-40 bg-white shadow px-4 py-3 flex items-center justify-between">
+            <div className="md:hidden fixed top-0 left-0 right-0 z-40 bg-base-100 shadow px-4 py-3 flex items-center justify-between">
 
                 {/*  Menu Button + Title */}
                 <div className="flex items-center gap-3">
@@ -111,7 +114,7 @@ const DashboardLayout = () => {
             <aside
                 className={`
                     fixed md:static z-50
-                    w-64 bg-white shadow-xl px-6 py-8
+                    w-64 bg-base-200 shadow-xl px-6 py-8
                     h-full md:h-auto
                     transition-transform duration-300
                     ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
@@ -123,6 +126,7 @@ const DashboardLayout = () => {
                 >
                     <FaTimes />
                 </button>
+                
 
                 {/* User Info */}
                 <div className="text-center mb-6 border-b pb-6">
@@ -134,14 +138,14 @@ const DashboardLayout = () => {
                     <h3 className="font-bold mt-3">
                         {name || user.displayName}
                     </h3>
-                    <p className="text-sm text-gray-500">{user.email}</p>
+                    <p className="text-sm text-base-content/70">{user.email}</p>
                     <span className="badge badge-primary mt-2">{role}</span>
                 </div>
 
                 {/* Menu */}
                 <ul className="space-y-2">
                     <li onClick={() => setOpen(false)}>
-                        <Link to="/" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100">
+                        <Link to="/" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-base-content/10 ">
                             <FaHome /> Home
                         </Link>
                     </li>
@@ -181,8 +185,8 @@ const DashboardLayout = () => {
             </aside>
 
             {/* ================= Main ================= */}
-            <main className="flex-1 pt-16 md:pt-0 p-6 md:p-10">
-
+            <main className=" flex-1 pt-16 md:pt-0 p-6 md:p-10">
+                
                 {/* ================= CENTER WELCOME CARD ================= */}
                 {isDashboardHome && (
                     <div className="flex items-center justify-center min-h-screen">
@@ -190,20 +194,20 @@ const DashboardLayout = () => {
                             initial={{ opacity: 0, scale: 0.9, y: 40 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="bg-white shadow-2xl rounded-3xl px-10 py-12 max-w-xl w-full text-center border"
+                            className="bg-base-100 shadow-2xl rounded-3xl px-10 py-12 max-w-xl w-full text-center border"
                         >
                             <div className="flex justify-center mb-4">
                                 {roleIcon[role]}
                             </div>
 
-                            <h2 className="text-3xl font-extrabold text-gray-800">
+                            <h2 className="text-3xl font-extrabold text-base-content">
                                 Welcome,{" "}
                                 <span className="text-primary">
                                     {name || user.displayName}
                                 </span>
                             </h2>
 
-                            <p className="mt-3 text-gray-600 text-sm">
+                            <p className="mt-3 text-base-content/70 text-sm">
                                 You are logged in as a{" "}
                                 <span className="font-semibold text-primary">
                                     {role}

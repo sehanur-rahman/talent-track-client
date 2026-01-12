@@ -74,7 +74,7 @@ const ManageScholarships = () => {
             <h2 className="text-3xl font-bold mb-6">Manage Scholarships</h2>
 
             {/* ================= TABLE ================= */}
-            <div className="overflow-x-auto bg-white rounded-xl shadow">
+            <div className="overflow-x-auto bg-base-200 rounded-xl shadow">
                 <table className="table w-full">
                     <thead className="bg-base-200">
                         <tr>
@@ -243,7 +243,7 @@ const ManageScholarships = () => {
                             <button
                                 type="button"
                                 onClick={() => setEditing(null)}
-                                className="btn"
+                                className="btn border border-base-300 dark:border-white/60"
                             >
                                 Cancel
                             </button>

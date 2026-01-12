@@ -1,56 +1,78 @@
-import { Link, NavLink} from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useUserRole from "../hooks/useUserRole";
 import logo from "../assets/logo.png";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
     const { user, logoutUser, loading } = useAuth();
-    const { name } = useUserRole(); 
+
+    // 🔹 only change: roleLoading add
+    const { name, roleLoading } = useUserRole();
 
     const handleLogout = async () => {
         try {
             await logoutUser();
-
             localStorage.removeItem("access-token");
-            window.location.href = "/";
+            Navigate("/");
+
         } catch (err) {
             console.error(err);
         }
     };
 
-
     const navLinkClass = ({ isActive }) =>
         isActive ? "text-primary font-semibold" : "font-medium";
 
     const navLinks = (
-        <>
+    <>
+        <li>
+            <NavLink to="/" className={navLinkClass}>
+                Home
+            </NavLink>
+        </li>
+
+        <li>
+            <NavLink to="/scholarships" className={navLinkClass}>
+                All Scholarships
+            </NavLink>
+        </li>
+
+        <li>
+            <NavLink to="/about" className={navLinkClass}>
+                About Us
+            </NavLink>
+        </li>
+
+        <li>
+            <NavLink to="/contact" className={navLinkClass}>
+                Contact
+            </NavLink>
+        </li>
+
+        <li>
+            <NavLink to="/privacy" className={navLinkClass}>
+                Privacy & Terms
+            </NavLink>
+        </li>
+
+        {/* Dashboard only for logged in users */}
+        {user && !roleLoading && (
             <li>
-                <NavLink to="/" className={navLinkClass}>
-                    Home
+                <NavLink to="/dashboard" className={navLinkClass}>
+                    Dashboard
                 </NavLink>
             </li>
-            <li>
-                <NavLink to="/scholarships" className={navLinkClass}>
-                    All Scholarships
-                </NavLink>
-            </li>
-            {user && (
-                <li>
-                    <NavLink to="/dashboard" className={navLinkClass}>
-                        Dashboard
-                    </NavLink>
-                </li>
-            )}
-        </>
-    );
+        )}
+    </>
+);
+
 
     return (
-        <div className="bg-white shadow-md sticky top-0 z-50">
+        <div className="bg-base-100 shadow-md sticky top-0 z-50">
             <div className="navbar max-w-6xl mx-auto px-4">
-
-
+                {/* ---------- START ---------- */}
                 <div className="navbar-start">
-
                     <div className="dropdown lg:hidden">
                         <label tabIndex={0} className="btn btn-ghost">
                             <svg
@@ -77,7 +99,6 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-
                     <Link to="/" className="flex items-center gap-3">
                         <img
                             src={logo}
@@ -95,15 +116,16 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-
+                {/* ---------- CENTER ---------- */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal gap-4">
                         {navLinks}
                     </ul>
                 </div>
 
+                {/* ---------- END ---------- */}
                 <div className="navbar-end gap-3">
-
+                    <ThemeToggle />
                     {!loading && !user && (
                         <>
                             <Link to="/login" className="btn btn-outline btn-md">
@@ -117,7 +139,6 @@ const Navbar = () => {
                             </Link>
                         </>
                     )}
-
 
                     {!loading && user && (
                         <div className="dropdown dropdown-end">
@@ -135,7 +156,6 @@ const Navbar = () => {
                                     />
                                 </div>
                             </label>
-
 
                             <ul
                                 tabIndex={0}

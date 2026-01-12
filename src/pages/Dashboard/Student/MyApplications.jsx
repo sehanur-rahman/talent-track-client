@@ -68,7 +68,7 @@ const MyApplications = () => {
     const renderActions = (app) => (
         <div className="space-y-1">
             <button
-                className="btn btn-xs w-full"
+                className="btn btn-xs w-full border border-base-300 dark:border-white/60"
                 onClick={() => setDetailsApp(app)}
             >
                 Details
@@ -127,7 +127,7 @@ const MyApplications = () => {
             <h2 className="text-3xl font-bold mb-6">My Applications</h2>
 
             {/* ================= DESKTOP TABLE ================= */}
-            <div className="hidden md:block bg-white rounded-xl shadow overflow-x-auto">
+            <div className="hidden md:block bg-base-300 rounded-xl shadow overflow-x-auto">
                 <table className="table">
                     <thead>
                         <tr>
@@ -182,7 +182,7 @@ const MyApplications = () => {
                 {applications.map(app => (
                     <div
                         key={app._id}
-                        className="bg-white p-4 rounded-xl shadow space-y-2"
+                        className="bg-base-300 p-4 rounded-xl shadow space-y-2"
                     >
                         <h3 className="font-bold">{app.universityName}</h3>
                         <p>{app.scholarshipCategory}</p>
@@ -231,7 +231,7 @@ const MyApplications = () => {
 
                         <div className="modal-action justify-end">
                             <button
-                                className="btn btn-sm"
+                                className="btn btn-sm border border-base-300 dark:border-white/60"
                                 onClick={() => setDetailsApp(null)}
                             >
                                 Close
@@ -280,7 +280,7 @@ const MyApplications = () => {
                                 Submit
                             </button>
                             <button
-                                className="btn"
+                                className="btn border border-base-300 dark:border-white/60"
                                 onClick={() => setReviewApp(null)}
                             >
                                 Cancel

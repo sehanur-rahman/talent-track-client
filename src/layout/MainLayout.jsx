@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const MainLayout = () => {
     const { pathname } = useLocation();
@@ -18,6 +19,7 @@ const MainLayout = () => {
                 <Outlet />
             </main>
             <Footer />
+            <ScrollToTopButton />
         </div>
     );
 };

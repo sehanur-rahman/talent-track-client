@@ -39,6 +39,12 @@ import AdminRoute from "./AdminRoute";
 import ModeratorRoute from "./ModeratorRoute";
 import StripeWrapper from "../stripe/StripeWrapper";
 
+// ===== Static Pages =====
+import AboutUs from "../pages/About/AboutUs";
+import Contact from "../pages/Contact/Contact";
+import PrivacyTerms from "../pages/Privacy/PrivacyTerms";
+
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +54,11 @@ export const router = createBrowserRouter([
 
             { path: "scholarships", element: <AllScholarships /> },
             { path: "scholarships/:id", element: <ScholarshipDetails /> },
+
+            // ===== Static Pages =====
+            { path: "about", element: <AboutUs /> },
+            { path: "contact", element: <Contact /> },
+            { path: "privacy", element: <PrivacyTerms /> },
 
             { path: "login", element: <Login /> },
             { path: "register", element: <Register /> },

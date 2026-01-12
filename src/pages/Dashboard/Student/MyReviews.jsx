@@ -94,7 +94,7 @@ const MyReviews = () => {
             <h2 className="text-3xl font-bold mb-6">My Reviews</h2>
 
             {/* ================= DESKTOP TABLE ================= */}
-            <div className="hidden md:block bg-white rounded-xl shadow overflow-x-auto">
+            <div className="hidden md:block bg-base-300 rounded-xl shadow overflow-x-auto">
                 <table className="table">
                     <thead>
                         <tr>
@@ -154,13 +154,13 @@ const MyReviews = () => {
                 {reviews.map(review => (
                     <div
                         key={review._id}
-                        className="bg-white p-4 rounded-xl shadow space-y-2"
+                        className="bg-base-300 p-4 rounded-xl shadow space-y-2"
                     >
                         <h3 className="font-bold text-lg">
                             {review.universityName}
                         </h3>
 
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-base-content/70">
                             {new Date(review.reviewDate).toLocaleDateString()}
                         </p>
 
@@ -238,7 +238,7 @@ const MyReviews = () => {
                                 Update
                             </button>
                             <button
-                                className="btn"
+                                className="btn border border-base-300 dark:border-white/60"
                                 onClick={() => setEditReview(null)}
                             >
                                 Cancel

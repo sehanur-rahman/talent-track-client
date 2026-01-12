@@ -16,7 +16,7 @@ const TopScholarships = () => {
             .get("/scholarships", {
                 params: {
                     sort: "fees-asc",
-                    limit: 6,
+                    limit: 8,
                 },
             })
             .then((res) => {
@@ -42,7 +42,7 @@ const TopScholarships = () => {
             </motion.h2>
 
             {/* ================= CARDS ================= */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
                 {scholarships.map((item, index) => (
                     <motion.div
                         key={item._id}

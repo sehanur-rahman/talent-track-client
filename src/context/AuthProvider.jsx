@@ -11,7 +11,7 @@ import {
     signOut,
 } from "firebase/auth";
 
-import { auth } from "../firebase/firebase.config"; 
+import { auth } from "../firebase/firebase.config";
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -53,20 +53,15 @@ const AuthProvider = ({ children }) => {
 
     // Track Auth State
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            const token = localStorage.getItem("access-token");
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);   
+        setLoading(false);      
+    });
 
-            if (currentUser && !token) {
-                return;
-            }
-
-            setUser(currentUser);
-            setLoading(false);
-        });
+    return () => unsubscribe();
+}, []);
 
 
-        return () => unsubscribe();
-    }, []);
 
     const authInfo = {
         user,
