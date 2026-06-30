@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
-    const [theme, setTheme] = useState("light");
+    // 🔹 Load theme from localStorage
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
 
+    // 🔹 Apply theme + persist
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
     }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === "light" ? "dark" : "light");
+    };
 
     return (
         <label className="swap swap-rotate">
             <input
                 type="checkbox"
                 checked={theme === "dark"}
-                onChange={() =>
-                    setTheme(theme === "light" ? "dark" : "light")
-                }
+                onChange={toggleTheme}
             />
 
             {/* sun */}
