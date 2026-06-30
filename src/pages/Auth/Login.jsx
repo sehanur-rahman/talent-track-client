@@ -180,7 +180,7 @@ const Login = () => {
                     disabled={loadingLogin}
                     className="btn btn-secondary w-full mt-3"
                 >
-                    Demo Student Login
+                    Demo Player Login
                 </button>
 
 

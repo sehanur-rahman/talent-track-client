@@ -1,6 +1,6 @@
 const Faq = () => {
     return (
-        <section className=" py-16  rounded-3xl">
+        <section className="py-16 rounded-3xl">
             <div className="max-w-4xl mx-auto px-4">
 
                 {/* Heading */}
@@ -9,7 +9,7 @@ const Faq = () => {
                         Frequently Asked Questions (FAQ)
                     </h2>
                     <p className="text-base-content/70 mt-3 text-sm md:text-base">
-                        Everything you need to know about scholarships, applications, and payments on ScholarStream.
+                        Everything you need to know about TalentTrack, talent hunt programs, player registration, and application process.
                     </p>
                 </div>
 
@@ -20,12 +20,12 @@ const Faq = () => {
                     <div className="collapse collapse-arrow bg-base-200 rounded-xl border">
                         <input type="checkbox" />
                         <div className="collapse-title font-semibold text-base-content">
-                            How does ScholarStream help students find scholarships?
+                            What is TalentTrack and how does it work?
                         </div>
                         <div className="collapse-content text-base-content/70 text-sm leading-relaxed">
-                            ScholarStream provides a centralized platform where students can browse verified scholarships
-                            from universities worldwide, filter by degree, country, and category, and apply easily without
-                            missing deadlines.
+                            TalentTrack is a sports talent discovery platform that connects aspiring football and cricket players
+                            with professional academies, clubs, and talent evaluators. Players can explore talent hunt programs,
+                            apply online, and track their application status from one place.
                         </div>
                     </div>
 
@@ -33,11 +33,11 @@ const Faq = () => {
                     <div className="collapse collapse-arrow bg-base-200 rounded-xl border">
                         <input type="checkbox" />
                         <div className="collapse-title font-semibold text-base-content">
-                            Is registration free for students?
+                            Is player registration free?
                         </div>
                         <div className="collapse-content text-base-content/70 text-sm leading-relaxed">
-                            Yes, creating an account on ScholarStream is completely free. Students only pay application
-                            fees when applying for specific scholarships that require payment.
+                            Yes, creating a TalentTrack account is completely free. Registration fees are only required
+                            when applying for specific talent hunt programs that charge an application fee.
                         </div>
                     </div>
 
@@ -45,12 +45,12 @@ const Faq = () => {
                     <div className="collapse collapse-arrow bg-base-200 rounded-xl border">
                         <input type="checkbox" />
                         <div className="collapse-title font-semibold text-base-content">
-                            How does the scholarship application payment work?
+                            How do I apply for a talent hunt program?
                         </div>
                         <div className="collapse-content text-base-content/70 text-sm leading-relaxed">
-                            Payments are securely processed using Stripe. After successful payment, your application is
-                            submitted and marked as paid. If payment fails, you can retry
-                            from your dashboard.
+                            Browse available talent hunt programs, view the program details, complete the application,
+                            and pay the registration fee securely through Stripe. Your application will then be submitted
+                            for evaluation.
                         </div>
                     </div>
 
@@ -58,11 +58,12 @@ const Faq = () => {
                     <div className="collapse collapse-arrow bg-base-200 rounded-xl border">
                         <input type="checkbox" />
                         <div className="collapse-title font-semibold text-base-content">
-                            Who reviews my scholarship application?
+                            Who reviews my application?
                         </div>
                         <div className="collapse-content text-base-content/70 text-sm leading-relaxed">
-                            Applications are reviewed by platform moderators. They can provide feedback, update application
-                            status (Pending → Processing → Completed), or reject applications if needed.
+                            Applications are reviewed by experienced Talent Evaluators. They assess player information,
+                            provide professional feedback, and update the application status to Pending, Selected,
+                            Rejected, or Completed.
                         </div>
                     </div>
 
@@ -70,11 +71,11 @@ const Faq = () => {
                     <div className="collapse collapse-arrow bg-base-200 rounded-xl border">
                         <input type="checkbox" />
                         <div className="collapse-title font-semibold text-base-content">
-                            Can I edit or delete my application after submission?
+                            Can I edit or withdraw my application?
                         </div>
                         <div className="collapse-content text-base-content/70 text-sm leading-relaxed">
-                            You can edit or delete your application only while its status is pending.
-                            Once it moves to processing or completed, changes are no longer allowed.
+                            Yes. Players can edit or withdraw their application while its status is still pending.
+                            Once the evaluation process begins, modifications are no longer allowed.
                         </div>
                     </div>
 
@@ -82,11 +83,11 @@ const Faq = () => {
                     <div className="collapse collapse-arrow bg-base-200 rounded-xl border">
                         <input type="checkbox" />
                         <div className="collapse-title font-semibold text-base-content">
-                            When can I add a review for a scholarship?
+                            When can I submit a review?
                         </div>
                         <div className="collapse-content text-base-content/70 text-sm leading-relaxed">
-                            Students can add reviews only after their application status is marked as
-                            completed. This ensures authentic and meaningful feedback.
+                            Players can submit a review after completing a talent hunt program. This helps future
+                            athletes learn about academies and ensures genuine, experience-based feedback.
                         </div>
                     </div>
 

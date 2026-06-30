@@ -16,19 +16,18 @@ const Footer = () => {
                             alt="ScholarStream logo"
                             className="h-14 w-14 object-contain"
                         />
-                        <div className="flex flex-col leading-tight -ms-4">
+                        <div className="flex flex-col leading-tight -ms-3">
                             <span className="text-sm font-bold tracking-tight">
-                                Scholar
+                                Talent
                             </span>
-                            <span className="text-sm font-bold text-yellow-500 -mt-1.5 tracking-wide">
-                                Stream
+                            <span className="text-sm font-bold text-primary -mt-1.5 tracking-wide">
+                                Track
                             </span>
                         </div>
                     </Link>
 
                     <p className="text-sm text-gray-400 max-w-md">
-                        Connecting students with verified global scholarship
-                        opportunities and simplifying the application journey.
+                        Connecting talented athletes with academies, clubs, and professional scouts through a modern sports talent discovery platform.
                     </p>
                 </div>
 
@@ -80,7 +79,7 @@ const Footer = () => {
 
                 {/* ===== Copyright ===== */}
                 <div className="border-t border-white/10 pt-2 text-center text-sm text-gray-500">
-                    © {new Date().getFullYear()} ScholarStream. All rights reserved.
+                    © {new Date().getFullYear()} TalentTrack. All rights reserved.
                 </div>
             </div>
         </footer>

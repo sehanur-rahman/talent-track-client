@@ -15,12 +15,11 @@ const Contact = () => {
                     
                     {/* Contact Info */}
                     <div className="space-y-4">
-                        <p><strong>Email:</strong> support@scholarstream.com</p>
+                        <p><strong>Email:</strong> support@talenttrack.com</p>
                         <p><strong>Phone:</strong> +880 1234 567 890</p>
                         <p><strong>Address:</strong> Dhaka, Bangladesh</p>
                     </div>
 
-                    {/* Contact Form (UI only – professional) */}
                     <form className="bg-base-100 p-6 rounded-xl shadow border space-y-4">
                         <input
                             type="text"

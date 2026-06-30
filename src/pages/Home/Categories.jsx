@@ -1,37 +1,37 @@
 import { motion } from "framer-motion";
 import {
-    FaGraduationCap,
-    FaBook,
-    FaBrain,
-    FaMoneyBillWave,
-    FaFileInvoiceDollar,
-    FaGlobe,
+    FaFutbol,
+    FaBaseballBall,
+    FaUsers,
+    FaChild,
+    FaTrophy,
+    FaRunning,
 } from "react-icons/fa";
 
 const categories = [
     {
-        title: "Undergraduate",
-        icon: <FaGraduationCap />,
+        title: "Football Trials",
+        icon: <FaFutbol />,
     },
     {
-        title: "Masters",
-        icon: <FaBook />,
+        title: "Cricket Trials",
+        icon: <FaBaseballBall />,
     },
     {
-        title: "PhD",
-        icon: <FaBrain />,
+        title: "Youth Talent Hunt",
+        icon: <FaChild />,
     },
     {
-        title: "Fully Funded",
-        icon: <FaMoneyBillWave />,
+        title: "Professional Academy",
+        icon: <FaTrophy />,
     },
     {
-        title: "Partial Funded",
-        icon: <FaFileInvoiceDollar />,
+        title: "Club Recruitment",
+        icon: <FaUsers />,
     },
     {
-        title: "Country Based",
-        icon: <FaGlobe />,
+        title: "Open Selection Camp",
+        icon: <FaRunning />,
     },
 ];
 
@@ -46,10 +46,22 @@ const Categories = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-3xl font-bold text-center mb-10"
+                    className="text-3xl md:text-4xl font-bold text-center mb-4"
                 >
-                    Scholarship Categories
+                    Talent Hunt Categories
                 </motion.h2>
+
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="text-center text-base-content/70 max-w-2xl mx-auto mb-10"
+                >
+                    Explore a variety of football and cricket talent hunt
+                    programs designed for aspiring athletes of different age
+                    groups and skill levels.
+                </motion.p>
 
                 {/* Cards */}
                 <motion.div
@@ -65,25 +77,26 @@ const Categories = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.1, duration: 0.4 }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -6 }}
+                            whileHover={{ y: -8 }}
                             className="
                                 bg-base-200
-                                p-8 rounded-xl
+                                p-8
+                                rounded-2xl
                                 shadow-xl
                                 border border-base-300
-                                dark:border-white/40
                                 text-center
                                 cursor-pointer
-                                transition
+                                transition-all
+                                hover:shadow-2xl
                             "
                         >
                             {/* Icon */}
-                            <div className="text-4xl text-primary mb-4 flex justify-center">
+                            <div className="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-3xl mb-5">
                                 {cat.icon}
                             </div>
 
                             {/* Title */}
-                            <h4 className="font-semibold text-lg text-base-content">
+                            <h4 className="font-semibold text-xl text-base-content">
                                 {cat.title}
                             </h4>
                         </motion.div>

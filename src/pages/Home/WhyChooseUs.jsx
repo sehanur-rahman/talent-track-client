@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
 import {
-    FaCheckCircle,
-    FaWpforms,
-    FaClock,
+    FaFutbol,
+    FaUserTie,
+    FaClipboardCheck,
     FaShieldAlt,
 } from "react-icons/fa";
 
 const features = [
     {
-        title: "Verified Scholarships",
-        desc: "All scholarships are verified and updated regularly to ensure authenticity.",
-        icon: <FaCheckCircle />,
+        title: "Verified Talent Hunts",
+        desc: "Explore authentic football and cricket talent hunt programs organized by trusted academies and sports clubs.",
+        icon: <FaFutbol />,
     },
     {
-        title: "Easy Application",
-        desc: "Apply to scholarships with a simple and guided application process.",
-        icon: <FaWpforms />,
+        title: "Professional Evaluation",
+        desc: "Receive fair assessments and valuable feedback from experienced coaches and talent evaluators.",
+        icon: <FaUserTie />,
     },
     {
-        title: "Deadline Tracking",
-        desc: "Never miss deadlines with automated tracking and reminders.",
-        icon: <FaClock />,
+        title: "Easy Online Registration",
+        desc: "Apply for talent hunt programs, complete registration, and track your application in just a few steps.",
+        icon: <FaClipboardCheck />,
     },
     {
-        title: "Secure Platform",
-        desc: "Your data and documents are protected with secure authentication.",
+        title: "Secure & Transparent",
+        desc: "Your personal information and payments are protected with secure authentication and reliable technologies.",
         icon: <FaShieldAlt />,
     },
 ];
@@ -33,7 +33,9 @@ const container = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: { staggerChildren: 0.15 },
+        transition: {
+            staggerChildren: 0.15,
+        },
     },
 };
 
@@ -44,19 +46,26 @@ const item = {
 
 const WhyChooseUs = () => {
     return (
-        <section className="py-10">
-            <div className="max-w-6xl mx-auto px-4">
+        <section className="py-16">
+            <div className="max-w-7xl mx-auto px-4">
 
                 {/* Heading */}
-                <motion.h2
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="text-3xl font-bold text-center mb-10"
+                    className="text-center mb-14"
                 >
-                    Why Choose ScholarStream
-                </motion.h2>
+                    <h2 className="text-4xl md:text-5xl font-bold">
+                        Why Choose <span className="text-primary">TalentTrack</span>
+                    </h2>
+
+                    <p className="mt-5 max-w-3xl mx-auto text-base-content/70">
+                        TalentTrack helps aspiring athletes connect with top
+                        academies, clubs, and talent evaluators through a secure,
+                        transparent, and user-friendly platform.
+                    </p>
+                </motion.div>
 
                 {/* Cards */}
                 <motion.div
@@ -64,39 +73,33 @@ const WhyChooseUs = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="grid md:grid-cols-4 gap-6"
+                    className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
                 >
-                    {features.map((itemData, i) => (
+                    {features.map((feature, index) => (
                         <motion.div
-                            key={i}
+                            key={index}
                             variants={item}
-                            className="
-                                bg-base-200
-                                p-6 rounded-xl
-                                shadow-xl
-                                border border-base-300
-                                dark:border-white/40
-                                hover:shadow-2xl
-                                transition
-                            "
+                            whileHover={{ y: -8 }}
+                            className="bg-base-100 rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300"
                         >
                             {/* Icon */}
-                            <div className="text-4xl text-primary mb-4">
-                                {itemData.icon}
+                            <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-4xl mb-6">
+                                {feature.icon}
                             </div>
 
                             {/* Title */}
-                            <h4 className="font-semibold text-lg mb-2 text-base-content">
-                                {itemData.title}
-                            </h4>
+                            <h3 className="text-xl font-bold mb-3">
+                                {feature.title}
+                            </h3>
 
                             {/* Description */}
-                            <p className="text-base-content/70 text-sm">
-                                {itemData.desc}
+                            <p className="text-base-content/70 leading-7">
+                                {feature.desc}
                             </p>
                         </motion.div>
                     ))}
                 </motion.div>
+
             </div>
         </section>
     );

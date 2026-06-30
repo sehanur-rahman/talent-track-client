@@ -2,90 +2,107 @@ import { motion } from "framer-motion";
 import {
     FaUserPlus,
     FaSearch,
-    FaFileAlt,
-    FaTasks,
-    FaCheckCircle,
+    FaFileSignature,
+    FaClipboardCheck,
+    FaTrophy,
 } from "react-icons/fa";
 
 const steps = [
     {
-        title: "Create an Account",
-        desc: "Sign up with your email to access verified scholarships.",
+        number: "01",
+        title: "Create Your Account",
+        desc: "Register as a player using your email and complete your sports profile.",
         icon: <FaUserPlus />,
     },
     {
-        title: "Browse Scholarships",
-        desc: "Explore scholarships based on country, degree, and category.",
+        number: "02",
+        title: "Explore Talent Hunts",
+        desc: "Browse football and cricket talent hunt programs from verified academies and clubs.",
         icon: <FaSearch />,
     },
     {
-        title: "Submit Application",
-        desc: "Apply online by filling out the application and documents.",
-        icon: <FaFileAlt />,
+        number: "03",
+        title: "Apply & Complete Registration",
+        desc: "Submit your application and complete the registration fee securely online.",
+        icon: <FaFileSignature />,
     },
     {
-        title: "Track Progress",
-        desc: "Monitor your application status in real time.",
-        icon: <FaTasks />,
+        number: "04",
+        title: "Attend Evaluation",
+        desc: "Participate in trials and receive professional feedback from talent evaluators.",
+        icon: <FaClipboardCheck />,
     },
     {
-        title: "Get Results",
-        desc: "Receive updates once your application is reviewed.",
-        icon: <FaCheckCircle />,
+        number: "05",
+        title: "Get Selected",
+        desc: "Track your application status and begin your journey toward professional sports.",
+        icon: <FaTrophy />,
     },
 ];
 
 const HowItWorks = () => {
     return (
-        <section className="mt-12">
-            <div className="max-w-6xl mx-auto px-4">
+        <section className="py-20">
+            <div className="max-w-7xl mx-auto px-4">
 
-                {/* Section Heading */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
+                {/* Heading */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="text-3xl font-bold text-center mb-8"
+                    className="text-center mb-16"
                 >
-                    How ScholarStream Works
-                </motion.h2>
+                    <h2 className="text-4xl md:text-5xl font-bold">
+                        How <span className="text-primary">TalentTrack</span> Works
+                    </h2>
 
-                {/* Steps */}
-                <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-6 text-center">
-                    {steps.map((step, i) => (
+                    <p className="mt-5 max-w-3xl mx-auto text-base-content/70">
+                        Follow five simple steps to showcase your talent,
+                        connect with top academies, and build your sports career.
+                    </p>
+                </motion.div>
+
+                {/* Timeline */}
+                <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
+
+                    {steps.map((step, index) => (
                         <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 30 }}
+                            key={index}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="
-                                bg-base-200
-                                p-6 rounded-xl
-                                shadow-xl
-                                border border-base-300
-                                dark:border-white/40
-                                hover:shadow-2xl
-                                transition
-                            "
+                            transition={{ delay: index * 0.15 }}
+                            whileHover={{ y: -10 }}
+                            className="relative bg-base-100 rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl duration-300"
                         >
+
+                            {/* Step Number */}
+
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-lg">
+                                {step.number}
+                            </div>
+
                             {/* Icon */}
-                            <div className="text-4xl text-primary mb-4 flex justify-center">
+
+                            <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-4xl mt-6 mb-6">
                                 {step.icon}
                             </div>
 
                             {/* Title */}
-                            <h4 className="font-semibold text-lg mb-2 text-base-content">
+
+                            <h3 className="text-xl font-bold mb-3">
                                 {step.title}
-                            </h4>
+                            </h3>
 
                             {/* Description */}
-                            <p className="text-sm text-base-content/70">
+
+                            <p className="text-base-content/70 leading-7">
                                 {step.desc}
                             </p>
+
                         </motion.div>
                     ))}
+
                 </div>
             </div>
         </section>

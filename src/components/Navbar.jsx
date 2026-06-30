@@ -7,7 +7,6 @@ import ThemeToggle from "./ThemeToggle";
 const Navbar = () => {
     const { user, logoutUser, loading } = useAuth();
 
-    // 🔹 only change: roleLoading add
     const { name, roleLoading } = useUserRole();
 
     const handleLogout = async () => {
@@ -34,7 +33,7 @@ const Navbar = () => {
 
         <li>
             <NavLink to="/scholarships" className={navLinkClass}>
-                All Scholarships
+                Talent Hunts
             </NavLink>
         </li>
 
@@ -56,10 +55,9 @@ const Navbar = () => {
             </NavLink>
         </li>
 
-        {/* Dashboard only for logged in users */}
         {user && !roleLoading && (
             <li>
-                <NavLink to="/dashboard" className={navLinkClass}>
+                <NavLink to="/dashbord" className={navLinkClass}>
                     Dashboard
                 </NavLink>
             </li>
@@ -105,12 +103,12 @@ const Navbar = () => {
                             alt="logo"
                             className="h-14 w-14 object-contain"
                         />
-                        <div className="flex flex-col leading-tight -ms-4">
+                        <div className="flex flex-col leading-tight -ms-3">
                             <span className="text-sm font-bold tracking-tight">
-                                Scholar
+                                Talent
                             </span>
                             <span className="text-sm font-bold text-primary -mt-1.5 tracking-wide">
-                                Stream
+                                Track
                             </span>
                         </div>
                     </Link>

@@ -2,7 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import banner1 from "../../assets/banner/banner1.jpg";
+import banner1 from "../../assets/banner/banner1.jpeg";
 import banner2 from "../../assets/banner/banner2.jpg";
 import banner3 from "../../assets/banner/banner3.jpg";
 
@@ -11,20 +11,20 @@ const Banner = () => {
         {
             img: banner1,
             position: "left",
-            title: "Free Scholarships For Every Bright Student",
-            desc: "Find scholarships for every level of education and shape a brighter future.",
+            title: "Discover Your Hidden Sports Talent",
+            desc: "Join football and cricket talent hunt programs, showcase your skills, and get noticed by leading academies, clubs, and professional scouts.",
         },
         {
             img: banner2,
             position: "center",
-            title: "Build Your Dream Career With the Right Funding",
-            desc: "Discover scholarships that match your goals and start your academic journey.",
+            title: "Your Journey to Professional Sports Begins Here",
+            desc: "Explore upcoming talent hunts, complete your registration, and take the first step toward building a successful career in sports.",
         },
         {
             img: banner3,
             position: "right",
-            title: "Global Scholarship Opportunities For You",
-            desc: "Access top universities offering world-class funding worldwide.",
+            title: "Train Hard. Compete Smart. Get Selected.",
+            desc: "Connect with top sports academies, participate in professional trials, receive expert feedback, and unlock new opportunities to achieve your dreams.",
         },
     ];
 
@@ -107,7 +107,7 @@ const Banner = () => {
                                     to="/scholarships"
                                     className="btn btn-primary btn-sm sm:btn-md md:btn-lg mt-1 md:mt-2"
                                 >
-                                    Search Scholarships
+                                    Explore Talent Hunts
                                 </Link>
                             </div>
                         </div>

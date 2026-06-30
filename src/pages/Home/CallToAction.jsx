@@ -1,22 +1,33 @@
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const CallToAction = () => {
     return (
-        <section className="py-20 bg-primary text-center ">
-            <h2 className="text-3xl font-bold text-black">
-                Start Your Scholarship Journey Today
-            </h2>
-            <p className="mt-3 text-black/80">
-                Explore verified scholarships and apply before deadlines close.
-            </p>
+        <section className="py-12 bg-linear-to-r from-primary to-secondary text-white">
+            <div className="max-w-5xl mx-auto px-4 text-center">
 
-            <div className="mt-6 flex justify-center gap-4">
-                <Link to="/scholarships" className="btn btn-outline">
-                    Browse Scholarships
-                </Link>
-                <Link to="/register" className="btn btn-neutral">
-                    Create Account
-                </Link>
+                <span className="uppercase tracking-widest text-sm font-semibold opacity-90">
+                    Join The Future Of Sports
+                </span>
+
+                <h2 className="text-4xl md:text-5xl font-bold mt-4">
+                    Take Your First Step Toward
+                    <span className="text-primary-content"> Professional Sports</span>
+                </h2>
+
+                <p className="mt-6 max-w-2xl mx-auto text-lg text-white/80">
+                    Explore football and cricket talent hunt programs, connect
+                    with leading academies, and showcase your skills to
+                    experienced talent evaluators.
+                </p>
+
+                <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
+
+                    <Link to="/scholarships" className="btn btn-outline"> Browse Talent Hunts <FaArrowRight /> </Link> 
+                    <Link to="/register" className="btn btn-neutral"> Become a Player </Link>
+
+                </div>
+
             </div>
         </section>
     );

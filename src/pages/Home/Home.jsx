@@ -9,7 +9,8 @@ import Categories from './Categories';
 import Eligibility from './Eligibility';
 import Statistics from './Statistics';
 import CallToAction from './CallToAction';
-import PartnerCountries from './PartnerCountries';
+import PartnerCountries from './PartnerAcademy';
+import PartnerAcademy from './PartnerAcademy';
 
 const Home = () => {
     return (
@@ -22,7 +23,7 @@ const Home = () => {
             <Eligibility></Eligibility>
             <SuccessStories></SuccessStories>
             <Statistics></Statistics>
-            <PartnerCountries></PartnerCountries>
+            <PartnerAcademy></PartnerAcademy>
             <Faq></Faq>
             <CallToAction></CallToAction>
         </div>

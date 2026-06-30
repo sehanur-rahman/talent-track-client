@@ -1,31 +1,31 @@
 import { motion } from "framer-motion";
 import {
-    FaCheckCircle,
-    FaLanguage,
-    FaFileAlt,
-    FaGlobe,
+    FaUserCheck,
+    FaRunning,
+    FaHeartbeat,
+    FaIdCard,
     FaClipboardCheck,
 } from "react-icons/fa";
 
 const requirements = [
     {
-        text: "Minimum academic qualification",
-        icon: <FaCheckCircle />,
+        text: "Players must meet the required age criteria for the selected talent hunt program.",
+        icon: <FaUserCheck />,
     },
     {
-        text: "Language proficiency (IELTS / TOEFL if required)",
-        icon: <FaLanguage />,
+        text: "Basic football or cricket skills and a passion for competitive sports.",
+        icon: <FaRunning />,
     },
     {
-        text: "Valid academic documents and certificates",
-        icon: <FaFileAlt />,
+        text: "Applicants should be physically fit and medically capable of participating in trials.",
+        icon: <FaHeartbeat />,
     },
     {
-        text: "Country specific eligibility requirements",
-        icon: <FaGlobe />,
+        text: "Provide accurate personal information and valid identification during registration.",
+        icon: <FaIdCard />,
     },
     {
-        text: "Completed online application submission",
+        text: "Complete the online application and registration fee payment before the deadline.",
         icon: <FaClipboardCheck />,
     },
 ];
@@ -41,10 +41,15 @@ const Eligibility = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-3xl font-bold text-center mb-12"
+                    className="text-3xl font-bold text-center mb-4"
                 >
                     Eligibility & Requirements
                 </motion.h2>
+
+                <p className="text-center text-base-content/70 max-w-2xl mx-auto mb-12">
+                    Before applying for a football or cricket talent hunt,
+                    make sure you meet the following eligibility requirements.
+                </p>
 
                 {/* Content */}
                 <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -57,9 +62,9 @@ const Eligibility = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <img
-                            src="https://i.ibb.co/RkfTFRwf/The-Ultimate-Guide-to-Finding-a-Trustworthy-Lawyer-10-Point-Checklist.jpg"
-                            alt="Eligibility requirements"
-                            className="w-full rounded-2xl shadow-xl transition-transform duration-300 hover:scale-[1.02]"
+                            src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=900&q=80"
+                            alt="Sports Talent Hunt"
+                            className="w-full h-[500px] object-cover rounded-2xl shadow-xl transition-transform duration-300 hover:scale-[1.02]"
                         />
                     </motion.div>
 
@@ -80,13 +85,16 @@ const Eligibility = () => {
                                     p-5 rounded-xl
                                     shadow-xl
                                     border border-base-300
-                                    dark:border-white/40
+                                    hover:shadow-2xl
+                                    hover:-translate-y-1
+                                    duration-300
                                 "
                             >
-                                <span className="text-primary text-xl mt-1">
+                                <span className="text-primary text-2xl mt-1">
                                     {item.icon}
                                 </span>
-                                <span className="text-base-content">
+
+                                <span className="text-base-content leading-7">
                                     {item.text}
                                 </span>
                             </li>
