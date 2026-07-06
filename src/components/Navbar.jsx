@@ -1,4 +1,4 @@
-import { Link, Navigate, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useUserRole from "../hooks/useUserRole";
 import logo from "../assets/logo.png";
@@ -9,12 +9,13 @@ const Navbar = () => {
 
     const { name, roleLoading } = useUserRole();
 
+    const navigate = useNavigate();
+
     const handleLogout = async () => {
         try {
             await logoutUser();
             localStorage.removeItem("access-token");
-            Navigate("/");
-
+            navigate("/");
         } catch (err) {
             console.error(err);
         }
@@ -24,46 +25,46 @@ const Navbar = () => {
         isActive ? "text-primary font-semibold" : "font-medium";
 
     const navLinks = (
-    <>
-        <li>
-            <NavLink to="/" className={navLinkClass}>
-                Home
-            </NavLink>
-        </li>
-
-        <li>
-            <NavLink to="/scholarships" className={navLinkClass}>
-                Talent Hunts
-            </NavLink>
-        </li>
-
-        <li>
-            <NavLink to="/about" className={navLinkClass}>
-                About Us
-            </NavLink>
-        </li>
-
-        <li>
-            <NavLink to="/contact" className={navLinkClass}>
-                Contact
-            </NavLink>
-        </li>
-
-        <li>
-            <NavLink to="/privacy" className={navLinkClass}>
-                Privacy & Terms
-            </NavLink>
-        </li>
-
-        {user && !roleLoading && (
+        <>
             <li>
-                <NavLink to="/dashbord" className={navLinkClass}>
-                    Dashboard
+                <NavLink to="/" className={navLinkClass}>
+                    Home
                 </NavLink>
             </li>
-        )}
-    </>
-);
+
+            <li>
+                <NavLink to="/talent-hunts" className={navLinkClass}>
+                    Talent Hunts
+                </NavLink>
+            </li>
+
+            <li>
+                <NavLink to="/about" className={navLinkClass}>
+                    About Us
+                </NavLink>
+            </li>
+
+            <li>
+                <NavLink to="/contact" className={navLinkClass}>
+                    Contact
+                </NavLink>
+            </li>
+
+            <li>
+                <NavLink to="/privacy" className={navLinkClass}>
+                    Privacy & Terms
+                </NavLink>
+            </li>
+
+            {user && !roleLoading && (
+                <li>
+                    <NavLink to="/dashbord" className={navLinkClass}>
+                        Dashboard
+                    </NavLink>
+                </li>
+            )}
+        </>
+    );
 
 
     return (

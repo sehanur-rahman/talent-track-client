@@ -26,15 +26,13 @@ body {
 }
 
 
-
-/*  Hide left/right overflow, allow top */
 .success-swiper-wrapper {
   overflow-x: hidden;
   overflow-y: visible;
   padding-top: 80px; 
 }
 
-/* Swiper internal */
+
 .successSwiper {
   overflow: visible !important;
 }
@@ -46,7 +44,7 @@ body {
   transition: all 0.4s ease;
 }
 
-/* Card */
+
 .success-card {
   width: 340px;
   height: 260px;
@@ -69,7 +67,6 @@ body {
 }
 
 
-/* Active card lifted */
 .successSwiper .swiper-slide-active {
   align-items: flex-start;
 }
@@ -78,13 +75,13 @@ body {
   transform: translateY(-60px);
 }
 
-/* Side cards faded (ONLY 2 visible) */
+
 .successSwiper .swiper-slide-prev .success-card,
 .successSwiper .swiper-slide-next .success-card {
   opacity: 0.4;
 }
 
-/* Pagination bullets */
+
 .success-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
@@ -93,6 +90,6 @@ body {
 }
 
 .success-pagination .swiper-pagination-bullet-active {
-  background: #ff9616;
+  background: #1692ff;
 }
 

@@ -3,27 +3,27 @@ import { motion } from "framer-motion";
 const partners = [
     {
         name: "Bashundhara Kings",
-        img: "https://upload.wikimedia.org/wikipedia/en/5/5b/Bashundhara_Kings_logo.png",
+        img: "https://i.ibb.co/vxVxjDJ4/e737f5d53e8800b371e3d78d8fa403a2.jpg",
     },
     {
         name: "Abahani Limited Dhaka",
-        img: "https://upload.wikimedia.org/wikipedia/en/2/2e/Abahani_Limited_Dhaka_logo.png",
+        img: "https://i.ibb.co/0y63jCvT/1cf11b56678add185fcc870fde6ad0ba.jpg",
     },
     {
         name: "Mohammedan SC",
-        img: "https://upload.wikimedia.org/wikipedia/en/0/06/Mohammedan_SC_Dhaka_logo.png",
+        img: "https://i.ibb.co/S1ZfKyS/5cdad36ec636b8abd422591147ce81ca.jpg",
     },
     {
         name: "Bangladesh Cricket Board",
-        img: "https://upload.wikimedia.org/wikipedia/en/e/e8/Bangladesh_Cricket_Board_Logo.svg",
+        img: "https://i.ibb.co/bM7p0sR1/d988a838c1bad37b2211336ec81d7a45.jpg",
     },
     {
         name: "Bangladesh Krira Shikkha Protishthan (BKSP)",
-        img: "https://upload.wikimedia.org/wikipedia/en/5/55/BKSP_logo.png",
+        img: "https://i.ibb.co/q3G2YhWV/images-q-tbn-ANd9-Gc-RPjsoc-Neim-QXAq-D-h5-ADPwm-DE2-EGCOg-V2mg-Wu-Wbtb-O9-Rmhuv-F0-Tp2qk3-Me-s-10.jpg",
     },
     {
         name: "Sheikh Jamal Dhanmondi Club",
-        img: "https://upload.wikimedia.org/wikipedia/en/8/88/Sheikh_Jamal_Dhanmondi_Club_logo.png",
+        img: "https://i.ibb.co/8LjPDz1B/229fc706951d4d6de16ecee5583ebc5e.jpg",
     },
 ];
 

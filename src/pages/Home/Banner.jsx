@@ -102,7 +102,7 @@ const Banner = () => {
                                     {slide.desc}
                                 </p>
 
-                                {/* SEARCH SCHOLARSHIP BUTTON */}
+                                
                                 <Link
                                     to="/scholarships"
                                     className="btn btn-primary btn-sm sm:btn-md md:btn-lg mt-1 md:mt-2"

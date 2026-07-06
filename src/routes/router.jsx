@@ -3,8 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 // ===== Main Layout & Public Pages =====
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home";
-import AllScholarships from "../pages/Scholarships/AllScholarships";
-import ScholarshipDetails from "../pages/Scholarships/ScholarshipDetails";
+import AllTalentHunts from "../pages/TalentHunts/AllTalentHunts";
+import TalentHuntDetails from "../pages/TalentHunts/TalentHuntDetails";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
 import NotFound from "../pages/Error/NotFound";
@@ -52,8 +52,15 @@ export const router = createBrowserRouter([
         children: [
             { index: true, element: <Home /> },
 
-            { path: "scholarships", element: <AllScholarships /> },
-            { path: "scholarships/:id", element: <ScholarshipDetails /> },
+            {
+                path: "talent-hunts",
+                element: <AllTalentHunts />,
+            },
+
+            {
+                path: "talent-hunts/:id",
+                element: <TalentHuntDetails />,
+            },
 
             // ===== Static Pages =====
             { path: "about", element: <AboutUs /> },

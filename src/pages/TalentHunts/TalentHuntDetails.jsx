@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopScholarships = () => {
+const TalentHuntDetails = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const TopScholarships = () => {
     );
 };
 
-export default TopScholarships;
+export default TalentHuntDetails;

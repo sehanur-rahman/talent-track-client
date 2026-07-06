@@ -1,6 +1,5 @@
 import React from 'react';
 import Banner from './Banner';
-import TopScholarships from './TopScholarships';
 import SuccessStories from './SuccessStories';
 import Faq from './Faq';
 import WhyChooseUs from './WhyChooseUs';
@@ -9,15 +8,15 @@ import Categories from './Categories';
 import Eligibility from './Eligibility';
 import Statistics from './Statistics';
 import CallToAction from './CallToAction';
-import PartnerCountries from './PartnerAcademy';
 import PartnerAcademy from './PartnerAcademy';
+import FeaturedTalentHunts from './FeaturedTalentHunts';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <WhyChooseUs></WhyChooseUs>
-            <TopScholarships></TopScholarships>
+            <FeaturedTalentHunts></FeaturedTalentHunts>
             <HowItWorks></HowItWorks>
             <Categories></Categories>
             <Eligibility></Eligibility>
